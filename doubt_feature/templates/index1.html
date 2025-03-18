@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Upload and Display</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        #preview, #processedImage { max-width: 300px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h2>Upload an Image</h2>
+    <input type="file" id="imageInput" accept="image/*">
+    <button onclick="uploadImage()">Upload</button>
+    
+    <h3>Original Image</h3>
+    <img id="preview" style="display:none;"/>
+
+    <script>
+        function uploadImage() {
+            let fileInput = document.getElementById('imageInput');
+            let file = fileInput.files[0];
+            if (!file) {
+                alert("Please select an image first.");
+                return;
+            }
+
+            let formData = new FormData();
+            formData.append("file", file);
+
+            // Display the selected image
+            let preview = document.getElementById("preview");
+            preview.src = URL.createObjectURL(file);
+            preview.style.display = "block";
+
+            fetch("http://127.0.0.1:5000/upload", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.blob()) // Get response as a blob (image)
+            /* function to display the processed image
+            .then(blob => {
+                let url = URL.createObjectURL(blob);
+                document.getElementById("processedImage").src = url;
+                document.getElementById("processedImage").style.display = "block";
+            })*/
+            .catch(error => console.error("Error:", error));
+        }
+    </script>
+</body>
+</html>

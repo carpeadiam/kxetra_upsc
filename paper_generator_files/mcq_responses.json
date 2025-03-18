@@ -1,0 +1,354 @@
+{
+  "questions": [
+    {
+      "question": "Which country recently hosted the G20 Summit?",
+      "options": {
+        "a": "India",
+        "b": "Indonesia",
+        "c": "China",
+        "d": "Brazil"
+      },
+      "answer": "a" 
+    },
+    {
+      "question": "What major international agreement was recently signed to address climate change?",
+      "options": {
+        "a": "Kyoto Protocol",
+        "b": "Paris Agreement",
+        "c": "Montreal Protocol",
+        "d": "Copenhagen Accord"
+      },
+      "answer": "b"
+    },
+    {
+      "question": "Which significant global economic event dominated headlines recently?",
+      "options": {
+        "a": "A major currency devaluation",
+        "b": "A significant interest rate hike",
+        "c": "A major stock market crash",
+        "d": "A global recession"
+      },
+      "answer": "d"
+    },
+    {
+      "question": "A recent major geopolitical event involved which two countries? (choose the most significant recent event)",
+      "options": {
+        "a": "India and Pakistan",
+        "b": "Russia and Ukraine",
+        "c": "China and Taiwan",
+        "d": "USA and Iran"
+      },
+      "answer": "b"
+    },
+    {
+      "question": "What significant development recently occurred in the field of space exploration?",
+      "options": {
+        "a": "A new space telescope launch",
+        "b": "A successful moon landing",
+        "c": "A Mars rover discovery",
+        "d": "A new space station module"
+      },
+      "answer": "a"
+    },
+    {
+      "question": "The Partition of India resulted in the creation of which two nations?",
+      "options": {
+        "a": "India and Pakistan",
+        "b": "India and Bangladesh",
+        "c": "India and Sri Lanka",
+        "d": "Pakistan and Afghanistan"
+      },
+      "answer": "a"
+    },
+    {
+      "question": "Which movement significantly challenged British rule in India in the early 20th century?",
+      "options": {
+        "a": "Sepoy Mutiny",
+        "b": "Non-Cooperation Movement",
+        "c": "Quit India Movement",
+        "d": "Swadeshi Movement"
+      },
+      "answer": "d"
+    },
+    {
+      "question": "Who is considered the \"Father of Modern India\"?",
+      "options": {
+        "a": "Mahatma Gandhi",
+        "b": "Jawaharlal Nehru",
+        "c": "Sardar Vallabhbhai Patel",
+        "d": "Raja Ram Mohan Roy"
+      },
+      "answer": "d"
+    },
+    {
+      "question": "The Dandi March was a significant event in which major movement?",
+      "options": {
+        "a": "Quit India Movement",
+        "b": "Non-Cooperation Movement",
+        "c": "Civil Disobedience Movement",
+        "d": "Salt Satyagraha"
+      },
+      "answer": "d"
+    },
+    {
+      "question": "Which historical figure played a crucial role in India's independence struggle through diplomacy and international relations?",
+      "options": {
+        "a": "Jawaharlal Nehru",
+        "b": "Sardar Vallabhbhai Patel",
+        "c": "Mahatma Gandhi",
+        "d": "Subhas Chandra Bose"
+      },
+      "answer": "a"
+    },
+    {
+      "question": "Which mountain range is located in the Eastern Himalayas?",
+      "options": {
+        "a": "Karakoram",
+        "b": "Patkai Bum",
+        "c": "Arakan Yoma",
+        "d": "Himalayas"
+      },
+      "answer": "b"
+    },
+    {
+      "question": "The longest river in India is:",
+      "options": {
+        "a": "Ganga",
+        "b": "Brahmaputra",
+        "c": "Godavari",
+        "d": "Yamuna"
+      },
+      "answer": "b"
+    },
+    {
+      "question": "Which of these is a major hot desert?",
+      "options": {
+        "a": "Thar Desert",
+        "b": "Sahara Desert",
+        "c": "Arabian Desert",
+        "d": "Gobi Desert"
+      },
+      "answer": "b"
+    },
+    {
+      "question": "Which geographical feature is known for its unique biodiversity?",
+      "options": {
+        "a": "Sundarbans",
+        "b": "Amazon Rainforest",
+        "c": "Great Barrier Reef",
+        "d": "Galapagos Islands"
+      },
+      "answer": "a"
+    },
+    {
+      "question": "The largest plateau in India is:",
+      "options": {
+        "a": "Deccan Plateau",
+        "b": "Malwa Plateau",
+        "c": "Chota Nagpur Plateau",
+        "d": "Chotanagpur Plateau"
+      },
+      "answer": "a"
+    },
+    {
+      "question": "The Indian Constitution is based on which principle?",
+      "options": {
+        "a": "Unitary",
+        "b": "Federal",
+        "c": "Presidential",
+        "d": "Parliamentary"
+      },
+      "answer": "d"
+    },
+    {
+      "question": "Which schedule of the Indian Constitution deals with languages?",
+      "options": {
+        "a": "1st",
+        "b": "6th",
+        "c": "8th",
+        "d": "12th"
+      },
+      "answer": "c"
+    },
+    {
+      "question": "The concept of \"Directive Principles of State Policy\" is found in which part of the Indian Constitution?",
+      "options": {
+        "a": "Part III",
+        "b": "Part IV",
+        "c": "Part IV A",
+        "d": "Part V"
+      },
+      "answer": "b"
+    },
+    {
+      "question": "The Indian Constitution guarantees which fundamental right?",
+      "options": {
+        "a": "Right to work",
+        "b": "Right to education",
+        "c": "Right to property",
+        "d": "Right to equality"
+      },
+      "answer": "d"
+    },
+    {
+      "question": "Which institution is responsible for the appointment of the Chief Election Commissioner of India?",
+      "options": {
+        "a": "Parliament",
+        "b": "President",
+        "c": "Prime Minister",
+        "d": "Supreme Court"
+      },
+      "answer": "b"
+    },
+    {
+      "question": "What is the Human Development Index (HDI)?",
+      "options": {
+        "a": "A measure of economic growth.",
+        "b": "A measure of a country's overall development.",
+        "c": "A measure of industrial output.",
+        "d": "A measure of literacy rates."
+      },
+      "answer": "b"
+    },
+    {
+      "question": "Which of the following is a major challenge to sustainable development?",
+      "options": {
+        "a": "Technological advancements",
+        "b": "Climate change",
+        "c": "Population growth",
+        "d": "Resource depletion"
+      },
+      "answer": "b"
+    },
+    {
+      "question": "What is the main objective of the National Food Security Act?",
+      "options": {
+        "a": "To increase agricultural production",
+        "b": "To ensure food security for all citizens",
+        "c": "To promote export of food grains",
+        "d": "To regulate food prices"
+      },
+      "answer": "b"
+    },
+    {
+      "question": "Which of the following is a significant social sector initiative in India?",
+      "options": {
+        "a": "National Rural Health Mission",
+        "b": "Mahatma Gandhi National Rural Employment Guarantee Act",
+        "c": "Pradhan Mantri Jan Dhan Yojana",
+        "d": "Swachh Bharat Abhiyan"
+      },
+      "answer": "b"
+    },
+    {
+      "question": "A key aspect of social inclusion in India focuses on:",
+      "options": {
+        "a": "Economic growth",
+        "b": "Educational opportunities",
+        "c": "Empowering marginalized communities",
+        "d": "Infrastructure development"
+      },
+      "answer": "c"
+    },
+    {
+      "question": "What is the primary cause of ozone depletion?",
+      "options": {
+        "a": "Carbon dioxide emissions",
+        "b": "Chlorofluorocarbons (CFCs)",
+        "c": "Methane emissions",
+        "d": "Deforestation"
+      },
+      "answer": "b"
+    },
+    {
+      "question": "Which protocol is primarily associated with the reduction of greenhouse gas emissions?",
+      "options": {
+        "a": "Montreal Protocol",
+        "b": "Kyoto Protocol",
+        "c": "Paris Agreement",
+        "d": "Copenhagen Accord"
+      },
+      "answer": "c"
+    },
+    {
+      "question": "What is biodiversity?",
+      "options": {
+        "a": "The variety of life on Earth",
+        "b": "The number of species in a region",
+        "c": "The genetic diversity within a species",
+        "d": "The distribution of species across the globe"
+      },
+      "answer": "a"
+    },
+    {
+      "question": "Which of the following is a major threat to biodiversity?",
+      "options": {
+        "a": "Climate change",
+        "b": "Habitat loss",
+        "c": "Pollution",
+        "d": "Overexploitation of resources"
+      },
+      "answer": "b"
+    },
+    {
+      "question": "What is the main aim of the Ramsar Convention?",
+      "options": {
+        "a": "To protect endangered species",
+        "b": "To conserve wetlands",
+        "c": "To combat desertification",
+        "d": "To promote sustainable agriculture"
+      },
+      "answer": "b"
+    },
+    {
+      "question": "What is the primary function of a \"bioreactor\" in biotechnology?",
+      "options": {
+        "a": "To produce vaccines",
+        "b": "To grow microorganisms",
+        "c": "To synthesize proteins",
+        "d": "To purify DNA"
+      },
+      "answer": "b"
+    },
+    {
+      "question": "What is nanotechnology?",
+      "options": {
+        "a": "The study of extremely small organisms",
+        "b": "The science of manipulating materials at the atomic level",
+        "c": "The science of creating artificial intelligence",
+        "d": "The study of the universe"
+      },
+      "answer": "b"
+    },
+    {
+      "question": "What is a \"fuel cell\"?",
+      "options": {
+        "a": "A type of battery",
+        "b": "A device that converts chemical energy into electrical energy",
+        "c": "A type of engine",
+        "d": "A type of generator"
+      },
+      "answer": "b"
+    },
+    {
+      "question": "What is the primary application of \"remote sensing\" technology?",
+      "options": {
+        "a": "Weather forecasting",
+        "b": "Military surveillance",
+        "c": "Environmental monitoring",
+        "d": "Medical imaging"
+      },
+      "answer": "c"
+    },
+    {
+      "question": "What is CRISPR technology primarily used for?",
+      "options": {
+        "a": "Gene editing",
+        "b": "Cloning",
+        "c": "Stem cell research",
+        "d": "Artificial intelligence"
+      },
+      "answer": "a"
+    }
+  ]
+}

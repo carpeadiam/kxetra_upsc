@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Solver</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .panel {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .hidden {
+            display: none;
+        }
+        #resultPanel {
+            white-space: pre-wrap;
+        }
+        .status {
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .status.processing {
+            background-color: #fff3cd;
+        }
+        .status.success {
+            background-color: #d4edda;
+        }
+        .status.error {
+            background-color: #f8d7da;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Question Solver</h1>
+        
+        <div class="panel">
+            <h2>Upload Question Image</h2>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <input type="file" id="fileInput" name="file" accept="image/*" required>
+                <button type="submit" id="uploadButton">Upload</button>
+            </form>
+            <div id="uploadStatus" class="status hidden"></div>
+        </div>
+        
+        <div class="panel hidden" id="processPanel">
+            <h2>Process Question</h2>
+            <p>Your image has been uploaded. Click the button below to process it.</p>
+            <button id="processButton">Process Question</button>
+            <div id="processStatus" class="status hidden"></div>
+        </div>
+        
+        <div class="panel hidden" id="resultPanel">
+            <h2>Results</h2>
+            <div id="resultContent"></div>
+        </div>
+    </div>
+
+    <script>
+        const uploadForm = document.getElementById('uploadForm');
+        const uploadStatus = document.getElementById('uploadStatus');
+        const processPanel = document.getElementById('processPanel');
+        const processButton = document.getElementById('processButton');
+        const processStatus = document.getElementById('processStatus');
+        const resultPanel = document.getElementById('resultPanel');
+        const resultContent = document.getElementById('resultContent');
+        const fileInput = document.getElementById('fileInput');
+        const uploadButton = document.getElementById('uploadButton');
+        
+        // Check processing status on page load
+        checkStatus();
+        
+        function checkStatus() {
+            fetch('/status')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.processing) {
+                        disableUpload(true);
+                        showMessage(uploadStatus, 'A question is currently being processed. Please wait.', 'processing');
+                        setTimeout(checkStatus, 2000); // Check again in 2 seconds
+                    } else {
+                        disableUpload(false);
+                    }
+                })
+                .catch(error => console.error('Error checking status:', error));
+        }
+        
+        function disableUpload(disabled) {
+            fileInput.disabled = disabled;
+            uploadButton.disabled = disabled;
+        }
+        
+        uploadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData();
+            const fileField = document.getElementById('fileInput');
+            
+            if (fileField.files.length === 0) {
+                showMessage(uploadStatus, 'Please select a file first', 'error');
+                return;
+            }
+            
+            formData.append('file', fileField.files[0]);
+            
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    showMessage(uploadStatus, data.error, 'error');
+                } else {
+                    showMessage(uploadStatus, 'File uploaded successfully!', 'success');
+                    processPanel.classList.remove('hidden');
+                }
+            })
+            .catch(error => {
+                showMessage(uploadStatus, 'Error uploading file: ' + error, 'error');
+            });
+        });
+        
+        processButton.addEventListener('click', function() {
+            processButton.disabled = true;
+            showMessage(processStatus, 'Processing question...', 'processing');
+            
+            fetch('/process_question', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    showMessage(processStatus, data.error, 'error');
+                    processButton.disabled = false;
+                } else {
+                    showMessage(processStatus, 'Processing started. Please wait...', 'processing');
+                    pollForResults();
+                }
+            })
+            .catch(error => {
+                showMessage(processStatus, 'Error: ' + error, 'error');
+                processButton.disabled = false;
+            });
+        });
+        
+        function pollForResults() {
+            // Check if still processing
+            fetch('/status')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.processing) {
+                        // Still processing, check again after a delay
+                        setTimeout(pollForResults, 2000);
+                    } else {
+                        // Processing complete, get results
+                        fetchResults();
+                    }
+                });
+        }
+        
+        function fetchResults() {
+            fetch('/get_result')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        showMessage(processStatus, data.error, 'error');
+                    } else {
+                        showMessage(processStatus, 'Processing complete!', 'success');
+                        resultContent.textContent = data.result;
+                        resultPanel.classList.remove('hidden');
+                        // Reset for new upload
+                        processButton.disabled = false;
+                    }
+                })
+                .catch(error => {
+                    showMessage(processStatus, 'Error fetching results: ' + error, 'error');
+                    processButton.disabled = false;
+                });
+        }
+        
+        function showMessage(element, message, type) {
+            element.textContent = message;
+            element.className = 'status ' + type;
+            element.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
